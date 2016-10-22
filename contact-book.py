@@ -57,7 +57,7 @@ for person in contacts_list:
 
 
 while True:
-    deletion = raw_input("Do you want to delete any of the contacts? yes/no")
+    deletion = raw_input("Do you want to delete any of the contacts? Press yes to delete, press no to exit programme.")
     if deletion == "no":
         break
     else:
@@ -72,8 +72,13 @@ while True:
             if delete_what == person.birth_year:
                 contacts_list.remove(person)
 
+ContactBook.write("All contacts:\n")
+
 for person in contacts_list:
     print "First name: " + person.first_name + " Last name: " + person.last_name + " Phone number: " + str(person.phone_number) + " Birth year: " + str(person.birth_year)
 
+    ContactBook.write("- " +  "First name: " + person.first_name + " Last name: " + person.last_name + " Phone number: " + str(person.phone_number) + " Birth year: " + str(person.birth_year) + "\n")
+
+ContactBook.close()
 
 

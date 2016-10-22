@@ -1,0 +1,3 @@
+All contacts:
+- First name: tina Last name: lisec Phone number: rg Birth year: grg
+- First name: stas Last name: jev Phone number: 435 Birth year: 26
