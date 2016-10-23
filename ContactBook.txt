@@ -1,3 +1,3 @@
 All contacts:
-- First name: tina Last name: lisec Phone number: rg Birth year: grg
-- First name: stas Last name: jev Phone number: 435 Birth year: 26
+- First name: Tina; Last name: Lisec; Phone number: 084923470129; Birth year: 1988
+- First name: Staš; Last name: Jevševar; Phone number: 53252; Birth year: 1987

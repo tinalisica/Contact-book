@@ -1,16 +1,11 @@
 # -*- coding: utf-8 -*-.
 
-#Kaj je potrebno še sprogramirati:
-
-"""dodajanje novega kontakta in shranitev tega kontakta v seznam (list)
-izpis seznama kontaktov
-urejanje obstoječega kontakta
-izbris kontakta
-shranitev seznama kontaktov v TXT datoteko (to naj se zgodi, ko se uporabnik odloči za izhod iz programa)
-branje kontaktov iz TXT datoteke in kreacija objektov iz njih (to naj se zgodi, ko uporabnik zažene ContactBook program)"""
 
 
-ContactBook = open("ContactBook.txt", "w+")
+"""MANJKA: branje kontaktov iz TXT datoteke in kreacija objektov iz njih (to naj se zgodi, ko uporabnik zažene ContactBook program)"""
+
+
+
 
 class Contact(object):
     def __init__(self, first_name, last_name, phone_number, birth_year):
@@ -21,8 +16,9 @@ class Contact(object):
 
 contacts_list = []
 
+
 while True:
-    new = raw_input("Please, add new contact. Press enter. If you want to cancel, press n")
+    new = raw_input("Please, add new contact. Press enter. If you want to cancel, press n. ")
     if new== "n":
         break
     else:
@@ -31,7 +27,11 @@ while True:
 
 
 for person in contacts_list:
-    print "First name: " + person.first_name + " Last name: " + person.last_name + " Phone number: " + str(person.phone_number) + " Birth year: " + str(person.birth_year)
+    print "First name: " + person.first_name
+    print "Last name: " + person.last_name
+    print "Phone number: " + str(person.phone_number)
+    print "Birth year: " + str(person.birth_year)
+    print "_________________________"
 
 while True:
     edit = raw_input("Do you want to edit any of the contacts? yes/no")
@@ -53,7 +53,11 @@ while True:
 
 
 for person in contacts_list:
-    print "First name: " + person.first_name + " Last name: " + person.last_name + " Phone number: " + str(person.phone_number) + " Birth year: " + str(person.birth_year)
+    print "First name: " + person.first_name
+    print "Last name: " + person.last_name
+    print "Phone number: " + str(person.phone_number)
+    print "Birth year: " + str(person.birth_year)
+    print "_________________________"
 
 
 while True:
@@ -62,22 +66,25 @@ while True:
         break
     else:
         delete_what = str(raw_input("Which contact do you want to delete? Write the name of the contact as in the existing Contactbook:"))
-        for person in contacts_list:
-            if delete_what == person.first_name:
-                contacts_list.remove(person)
-            if delete_what == person.last_name:
-                contacts_list.remove(person)
-            if delete_what == person.phone_number:
-                contacts_list.remove(person)
-            if delete_what == person.birth_year:
-                contacts_list.remove(person)
+
+    for person in contacts_list:
+        if delete_what == person.first_name:
+            contacts_list.remove(person)
+
+ContactBook = open("ContactBook.txt", "w+")
+
+
 
 ContactBook.write("All contacts:\n")
 
 for person in contacts_list:
-    print "First name: " + person.first_name + " Last name: " + person.last_name + " Phone number: " + str(person.phone_number) + " Birth year: " + str(person.birth_year)
+    print "First name: " + person.first_name
+    print "Last name: " + person.last_name
+    print "Phone number: " + str(person.phone_number)
+    print "Birth year: " + str(person.birth_year)
+    print "_________________________"
 
-    ContactBook.write("- " +  "First name: " + person.first_name + " Last name: " + person.last_name + " Phone number: " + str(person.phone_number) + " Birth year: " + str(person.birth_year) + "\n")
+    ContactBook.write("- " +  "First name: " + person.first_name + ";" " Last name: " + person.last_name + ";" " Phone number: " + str(person.phone_number) + ";" " Birth year: " + str(person.birth_year) + "\n")
 
 ContactBook.close()
 
